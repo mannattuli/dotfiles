@@ -1,6 +1,6 @@
 # Dotfiles
 
-Rice config for i3 that runs on my linux mint.
+Rice config for hyprland that runs on my linux mint.
 
 ### Applications
 - **Alacritty** - Terminal
