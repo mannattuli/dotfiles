@@ -3,8 +3,9 @@
 Rice config for i3 that runs on my linux mint.
 
 ### Applications
-- **[Polybar](https://github.com/polybar/polybar)** – A fast and easy-to-use tool for creating status bars.  
-- **[Picom](https://github.com/yshui/picom)** – A lightweight compositor for X11.  
+- **Alacritty** - Terminal
+- **Hyprland** - switched recently to hyprland
+- **[Waybar](https://github.com/polybar/polybar)](https://github.com/Alexays/Waybar)** – (the scripts for waybar are stored in polybar folder, i am lazy and did not wanna copy them into waybar)
 - **[Rofi](https://github.com/davatorium/rofi)** – A window switcher, application launcher, and dmenu replacement.  
 - **[Starship](https://starship.rs/)** – The minimal, blazing-fast, and infinitely customizable prompt for any shell.  
 - **[brightnessctl](https://github.com/Hummer12007/brightnessctl)** – A simple tool for controlling screen brightness.  
