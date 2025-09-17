@@ -1,0 +1,118 @@
+/* Silent Hill 2 Horror Theme for Waybar */
+
+@define-color fog_bg rgba(18, 20, 18, 0.35);
+@define-color fog_border #7f2a2a;
+@define-color mist_text #cfcfc9;
+@define-color blood #7f2a2a;
+@define-color rust #7D4D1D;
+@define-color mold #6C9A4B;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", monospace;
+  font-size: 12.5pt;
+  min-height: 0;
+}
+
+/* Remove padding from the main window */
+window#waybar {
+  background: @fog_bg;
+  border: 3px solid @fog_border;
+  border-radius: 12px;
+  color: @mist_text;
+  margin: 16px 40px 0 40px;
+  padding: 6px 0; /* Remove horizontal padding */
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.65);
+}
+
+.modules-left,
+.modules-center {
+  padding: 0 14px;
+}
+
+.modules-right {
+  padding: 0 14px;
+}
+
+/* workspace horror glow */
+#workspaces button {
+  padding: 0 8px;
+  border-radius: 6px;
+  color: @mist_text;
+}
+
+#workspaces button.active {
+  color: @blood;
+  background: rgba(177, 18, 38, 0.18);
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* separators like rusted pipes */
+#custom-separator {
+  color: @rust;
+  padding: 0 3px;
+}
+
+/* GPU temp in mold green */
+#custom-gpu-temp {
+  color: @mold;
+}
+
+/* Network */
+#network {
+  color: @mist_text;
+}
+#network.disconnected {
+  color: @blood;
+}
+
+/* Battery */
+#battery {
+  color: @mist_text;
+}
+#battery.charging {
+  color: @mold;
+}
+#battery.warning,
+#battery.critical {
+  color: @blood;
+  font-weight: bold;
+}
+
+
+/* Pulseaudio */
+#pulseaudio {
+  color: @rust;
+}
+#pulseaudio.muted {
+  color: @blood;
+}
+
+/* Mic */
+#custom-microphone {
+  color: @mist_text;
+}
+
+/* Bluetooth */
+#custom-bluetooth {
+  color: @mist_text;
+}
+
+/* Date + Times */
+#custom-date,
+#custom-ggn-time,
+#custom-australia-time {
+  color: @mist_text;
+}
+
+/* Todo */
+#custom-todo {
+  color: @mist_text;
+}
+
+/* Powermenu = blood red danger */
+#custom-powermenu {
+  color: @blood;
+}

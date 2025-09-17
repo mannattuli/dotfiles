@@ -1,0 +1,126 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "margin": "20 20 0 20",
+  "spacing": 12,
+  "modules-left": [
+    "custom/date",
+    "custom/separator",
+    "custom/ggn-time",
+    "custom/australia-time",
+    "custom/separator"
+    // "custom/todo"
+  ],
+  "modules-center": ["custom/workspaces"],
+  "modules-right": [
+    "custom/gpu-temp",
+    "custom/separator",
+    "custom/bluetooth",
+    "custom/microphone",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "pulseaudio",
+    "custom/separator",
+    "custom/powermenu"
+  ],
+
+
+  "custom/separator": {
+    "format": "│",
+    "tooltip": false
+  },
+
+  "custom/todo": {
+    "exec": "~/.config/polybar/obsidian/scripts/todo.sh",
+    "return-type": "json",
+    "interval": 5,
+    "on-click": "~/.config/polybar/obsidian/scripts/todo.sh check",
+    "on-click-right": "~/.config/polybar/obsidian/scripts/todo.sh list",
+    "format": " {}"
+  },
+
+  "custom/gpu-temp": {
+    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+    "interval": 5,
+    "format": " {}°C"
+  },
+
+  "custom/workspaces": {
+    "exec": "~/.config/waybar/scripts/workspaces.sh",
+    "return-type": "json",
+    "on-click": "hyprctl dispatch workspace $(echo {} | jq -r '.alt')",
+    "format": "{}"
+  },
+
+  "custom/ggn-time": {
+    "exec": "date +\"%H:%M\"",
+    "interval": 20,
+    "format": "GGN: {}"
+  },
+
+  "custom/australia-time": {
+    "exec": "TZ=Australia/Sydney date +\"%H:%M\"",
+    "interval": 20,
+    "format": "SYD: {}"
+  },
+
+  "custom/date": {
+    "exec": "TZ=Australia/Sydney date +\"%A, %d %B\"",
+    "interval": 20,
+    "format": "{}"
+  },
+
+  "network": {
+    "format-wifi": "󰖩 {essid}",
+    "format-ethernet": "󰖩 {ipaddr}",
+    "format-disconnected": "󰖪 no net"
+  },
+
+  "battery": {
+    "interval": 2,
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": " {capacity}%",
+    "tooltip": true,
+    "tooltip-format": "{time} remaining\nHealth: {capacity}%",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format-icons": [
+      "", "", "", "", ""
+    ]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": ["", ""]
+  },
+
+  "custom/microphone": {
+    "exec": "~/.config/polybar/obsidian/scripts/microphone.sh --status",
+    "interval": 3,
+    "on-click": "~/.config/polybar/obsidian/scripts/microphone.sh --toggle",
+    "format": " {}"
+  },
+
+  "custom/bluetooth": {
+    "exec": "~/.config/polybar/obsidian/scripts/bluetooth.sh --status",
+    "interval": 5,
+    "on-click": "~/.config/polybar/obsidian/scripts/bluetooth.sh --toggle",
+    "on-click-right": "blueman-manager",
+    "format": " {}"
+  },
+
+  "custom/powermenu": {
+    "exec": "echo ''",
+    "on-click": "~/.config/polybar/obsidian/scripts/powermenu.sh",
+    "interval": 3600
+  }
+}

@@ -12,18 +12,18 @@ get_volume() {
     else
         # Determine bar based on percentage to avoid rounding errors
         case "$VOLUME" in
-            0|1|2|3|4|5|6|7|8|9) bar="|░░░░░░░░░░|" ;;
-            1[0-9]) bar="|█░░░░░░░░░|" ;;
-            2[0-9]) bar="|██░░░░░░░░|" ;;
-            3[0-9]) bar="|███░░░░░░░|" ;;
-            4[0-9]) bar="|████░░░░░░|" ;;
-            5[0-9]) bar="|█████░░░░░|" ;;
-            6[0-9]) bar="|██████░░░░|" ;;
-            7[0-9]) bar="|███████░░░|" ;;
-            8[0-9]) bar="|████████░░|" ;;
-            9[0-9]) bar="|█████████░|" ;;
-            100) bar="|██████████|" ;;
-            *) bar="|░░░░░░░░░░|" ;; # Default case for safety
+            0|1|2|3|4|5|6|7|8|9) bar="░░░░░░░░░░" ;;
+            1[0-9]) bar="█░░░░░░░░░" ;;
+            2[0-9]) bar="██░░░░░░░░" ;;
+            3[0-9]) bar="███░░░░░░░" ;;
+            4[0-9]) bar="████░░░░░░" ;;
+            5[0-9]) bar="█████░░░░░" ;;
+            6[0-9]) bar="██████░░░░" ;;
+            7[0-9]) bar="███████░░░" ;;
+            8[0-9]) bar="████████░░" ;;
+            9[0-9]) bar="█████████░" ;;
+            100) bar="██████████" ;;
+            *) bar="░░░░░░░░░░" ;; # Default case for safety
         esac
 
         # Color thresholds
@@ -36,9 +36,9 @@ get_volume() {
         fi
         
         if [ "$VOLUME" -eq 0 ]; then
-            icon=" "  
+            icon="   "  
         else
-            icon=""
+            icon=" "
         fi
 
         # Apply the color to the entire output string

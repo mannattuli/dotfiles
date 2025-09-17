@@ -9,8 +9,8 @@ lock_option="  Lock"
 
 options="$shutdown_option\n$reboot_option\n$suspend_option\n$lock_option"
 
-# Use Rofi 
-chosen=$(echo -e "$options" | rofi -dmenu -i -p "Power:")
+# Use Rofi with a custom theme just for powermenu
+chosen=$(echo -e "$options" | rofi -dmenu -i -p "Power:" -theme ~/.config/rofi/themes/powermenu.rasi)
 
 # Execute the chosen action
 if [ -n "$chosen" ]; then
@@ -25,7 +25,7 @@ if [ -n "$chosen" ]; then
             systemctl suspend
             ;;
         "$lock_option")
-            # Assumes you have i3lock
+            # Assumes you have i3lock installed
             i3lock
             ;;
     esac
